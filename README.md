@@ -18,7 +18,7 @@ cd tw_logger
 ```
 virtualenv .venv
 source .venv/bin/activate
-pip install -r requerments.txt
+pip install -r requeirments.txt
 ```
 
 ## Installing and usage
@@ -46,6 +46,7 @@ python bot.py
 ## TO-DO
 general:
 - [ ] Create minimal web project to interact with database.
+- [ ] Move from venv to conda virtual environment installation.
 
 bot.py:
 - [ ] Make auto ping routine not dependable on CHANNELS variable.
