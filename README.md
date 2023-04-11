@@ -28,7 +28,8 @@ Create `settings.py` file with variables:
 Please notice that first channel in CHANNELS should be your bot channel name. (TODO: rework this)
 ```
 ACCESS_TOKEN = <your bots' API key>
-DEV_NAME = <your twitch nickname>
+BOT_NAME = <your bots name>
+DEV_NAME = <your twitch nickname, it's used to access bots commands>
 CHANNELS = <channel chats to log>
 ```
 
@@ -42,11 +43,16 @@ To start logging use:
 ```
 python bot.py
 ```
+## Commands
+
+*stats - show stats of the channel (using your database of this channel)
+*ping - pong!
 
 ## TO-DO
 general:
 - [ ] Create minimal web project to interact with database.
 - [ ] Move from venv to conda virtual environment installation.
+- [ ] Use batches of messages to improve perfomance.
 
 bot.py:
 - [x] Make auto ping routine not dependable on CHANNELS variable.
@@ -55,6 +61,7 @@ bot.py:
 - [x] Add stats command.
 - [ ] Rework get_stats method. Make it more beautiful
 - [ ] Invoke stats command on stream end.
+- [ ] Rework *ping command
 
 db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
