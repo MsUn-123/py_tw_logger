@@ -49,10 +49,12 @@ general:
 - [ ] Move from venv to conda virtual environment installation.
 
 bot.py:
-- [ ] Make auto ping routine not dependable on CHANNELS variable.
-- [ ] Make db connection dynamic instead of hardcoded CHANNELS[1] (logs only one channel). Change log_message method.
-- [ ] Add timeout event and log it as LogType.TIMEOUT.value with raw_data empty.
-- [ ] Add stats command.
+- [x] Make auto ping routine not dependable on CHANNELS variable.
+- [x] Make db connection dynamic instead of hardcoded CHANNELS[1] (logs only one channel). Change log_message method.
+- [ ] Add timeout_event and log it as LogType.TIMEOUT.value with raw_data empty.
+- [x] Add stats command.
+- [ ] Rework get_stats method. Make it more beautiful
+- [ ] Invoke stats command on stream end.
 
 db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
