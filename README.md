@@ -51,28 +51,28 @@ python bot.py
 
 ## TO-DO
 general:
-- [ ] Create minimal web project to interact with database.
-- [ ] Move from venv to conda virtual environment installation.
+- [ ] Create minimal web project to interact with databases.
+- [ ] Change installation method.
 - [ ] Move files to corresponding folders.
 
 perfomance:
 - [ ] Use batches of messages to improve perfomance.
-- [ ] Make pool connections for better perfomance
-
+- [ ] Make pool of connections. Investigate if we really need this.
 
 bot.py:
 - [x] Make auto ping routine not dependable on CHANNELS variable.
 - [x] Make db connection dynamic instead of hardcoded CHANNELS[1] (logs only one channel). Change log_message method.
 - [ ] Add timeout_event and log it as LogType.TIMEOUT.value with raw_data empty.
 - [x] Add stats command.
-- [ ] Rework get_stats method. Make it more beautiful
+- [ ] Rework get_stats method. Make it more beautiful.
 - [ ] Invoke stats command on stream end.
-- [ ] Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %
-- [ ] Rework *stats command to get stats of any tracked channel: *stats <channel>
+- [ ] Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %.
+- [ ] Rework *stats command to get stats of any tracked channel: *stats <channel>.
 
 db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
-- [ ] Add get_data method for stats command
+- [ ] Add get_data method for stats command.
+- [ ] Change database charset to utf8mb4_unicode_ci for emoji support. Change logic in db creating method.
 
 modules.py:
 - [ ] Move events to modules file and add more event handlers.
