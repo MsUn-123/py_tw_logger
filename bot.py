@@ -19,16 +19,11 @@ class Bot(commands.Bot):
     def __init__(self):
         super().__init__(token=ACCESS_TOKEN,
                          nickname=BOT_NAME, 
-                         prefix='*', 
+                         prefix=PREFIX, 
                          initial_channels=CHANNELS)
 
     async def event_ready(self):
         print(f'{self.nick} is up and running!')
-        await self.join_self(f'{self.nick}')
-
-    async def join_self(self, channel_name):
-        await bot.join_channels([channel_name])
-        self.ping_routine.start()
         
     #todo: add event_timeout
     async def event_message(self, message):
@@ -45,24 +40,15 @@ class Bot(commands.Bot):
 
     @commands.command()
     async def ping(self, ctx: commands.Context):
-        '''Manual ping command'''
+        '''Ping command'''
         if ctx.author.name == DEV_NAME:
-            print(self.connected_channels[-1].name)
-            await ctx.send(f'pong!')
+            await ctx.send(f'Pong! {utility.get_all_stats}')
     
     @commands.command()
     async def stats(self, ctx: commands.Context):
         '''Some stats for channel'''
         if ctx.author.name == DEV_NAME:
             await ctx.send(f'{await dbWorker.get_stats(_channel=ctx.channel.name)}')
-
-
-    @routines.routine(minutes=30, iterations=0)
-    async def ping_routine(self):
-        '''Routine to show uptime in it's channel every hour.\n
-           This method will break if you add manual channel join command.\n
-           Also this routine skips first iteration because bot needs time to connect to its channel.'''
-        await bot.get_channel(self.connected_channels[-1].name).send(f'My uptime: {utility.get_uptime()}')
 
 
 bot = Bot()

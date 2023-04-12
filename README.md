@@ -47,16 +47,17 @@ python bot.py
 
 *stats - show stats of the channel (using your database of this channel)
 
-*ping - pong!
+*ping - Pong! Uptime: *h:m*. RAM used: *%*.
 
 ## TO-DO
 general:
 - [ ] Create minimal web project to interact with databases.
 - [ ] Change installation method.
 - [ ] Move files to corresponding folders.
+- [x] Add prefix to settings.py
 
 perfomance:
-- [ ] Use batches of messages to improve perfomance.
+- [ ] Use batches of messages to improve perfomance. (if logging big amount of messages it can throw random errors)
 - [ ] Make pool of connections. Investigate if we really need this.
 
 bot.py:
@@ -66,16 +67,29 @@ bot.py:
 - [x] Add stats command.
 - [ ] Rework get_stats method. Make it more beautiful.
 - [ ] Invoke stats command on stream end.
-- [ ] Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %.
+- [ ] ~~Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %.~~ See utils.py section.
 - [ ] Rework *stats command to get stats of any tracked channel: *stats <channel>.
+- [x] Remove ping routine
+- [ ] On stream end form stats report and document it using stats.py (or/and show in chat (make it optional)).
 
 db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
 - [ ] Add get_data method for stats command.
-- [ ] Change database charset to utf8mb4_unicode_ci for emoji support. Change logic in db creating method.
+- [ ] Add emoji support.
+- [ ] Split db.py into logger.py and stats.py
+
+stats.py:
+- [ ] Create stats.py - this class will get random statistics from sqlite databases. 
+- [ ] Also make this class working with json channel files.
+
+utils.py:
+- [x] Fix get_uptime method
+- [x] Add platform stats - RAM usage (%).
+- [ ] Add platform stats - temp.
 
 modules.py:
 - [ ] Move events to modules file and add more event handlers.
+
 
 ## Contributing <a name = "contributing"></a>
 

@@ -48,8 +48,8 @@ class DBworker():
             
             chat_response = f'''Total messages: {total_msgs}, 
                                 Unique users: {unique_users},
-                                Msgs per user: {avg_perUser},
-                                Most msgs: {highest_user},'''
+                                Messages per user: {avg_perUser},
+                                Most messagges from: {highest_user},'''
 
             return chat_response
 
@@ -67,7 +67,7 @@ def init_databases():
                     username TEXT,
                     content TEXT,
                     raw_data TEXT
-                )
+                ) 
             ''')
 
 if __name__ == '__main__': 

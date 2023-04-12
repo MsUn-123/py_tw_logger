@@ -1,3 +1,4 @@
 settings.py
 *.sqlite
 __pycache__
+TODO.md
