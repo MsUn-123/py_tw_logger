@@ -53,6 +53,7 @@ python bot.py
 general:
 - [ ] Create minimal web project to interact with database.
 - [ ] Move from venv to conda virtual environment installation.
+- [ ] Move files to corresponding folders.
 
 perfomance:
 - [ ] Use batches of messages to improve perfomance.
