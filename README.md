@@ -46,13 +46,18 @@ python bot.py
 ## Commands
 
 *stats - show stats of the channel (using your database of this channel)
+
 *ping - pong!
 
 ## TO-DO
 general:
 - [ ] Create minimal web project to interact with database.
 - [ ] Move from venv to conda virtual environment installation.
+
+perfomance:
 - [ ] Use batches of messages to improve perfomance.
+- [ ] Make pool connections for better perfomance
+
 
 bot.py:
 - [x] Make auto ping routine not dependable on CHANNELS variable.
@@ -61,7 +66,8 @@ bot.py:
 - [x] Add stats command.
 - [ ] Rework get_stats method. Make it more beautiful
 - [ ] Invoke stats command on stream end.
-- [ ] Rework *ping command
+- [ ] Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %
+- [ ] Rework *stats command to get stats of any tracked channel: *stats <channel>
 
 db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
