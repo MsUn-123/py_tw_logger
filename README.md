@@ -68,7 +68,7 @@ bot.py:
 - [ ] Rework get_stats method. Make it more beautiful.
 - [ ] Invoke stats command on stream end.
 - [ ] ~~Rework *ping command: *ping - "Pong! Uptime - <time>, temp - <c°>, ram - <mb> + %.~~ See utils.py section.
-- [ ] Rework *stats command to get stats of any tracked channel: *stats <channel>.
+- [ ] Rework *stats command to get stats of any tracked channel: *stats *channel*.
 - [x] Remove ping routine
 - [ ] On stream end form stats report and document it using stats.py (or/and show in chat (make it optional)).
 
@@ -76,7 +76,7 @@ db.py:
 - [ ] Overhaul databases initiation and check if db exist for CHANNEL, create one if there is none.
 - [ ] Add get_data method for stats command.
 - [ ] Add emoji support.
-- [ ] Split db.py into logger.py and stats.py
+- [ ] Split db.py into logger.py (insert data to db) and stats.py (gets data from db)
 
 stats.py:
 - [ ] Create stats.py - this class will get random statistics from sqlite databases. 
@@ -87,7 +87,7 @@ utils.py:
 - [x] Add platform stats - RAM usage (%).
 - [ ] Add platform stats - temp.
 
-modules.py:
+modules.py (?):
 - [ ] Move events to modules file and add more event handlers.
 
 
